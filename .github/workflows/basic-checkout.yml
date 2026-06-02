@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+env:
+  CUSTOM_MESSAGE: "Hello from GitHub Actions!"
 
 jobs:
   basic-checkout:
@@ -36,3 +38,4 @@ jobs:
       - name: Run a simple command
         run: |
           echo "Basic checkout workflow completed successfully!"
+          echo "Custom message: $CUSTOM_MESSAGE"
