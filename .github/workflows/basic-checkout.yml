@@ -38,4 +38,11 @@ jobs:
       - name: Run a simple command
         run: |
           echo "Basic checkout workflow completed successfully!"
-          echo "Custom message: $CUSTOM_MESSAGE"
+          
+      - name: Display custom message
+        run: |
+          echo "$CUSTOM_MESSAGE"
+
+      - name: Conditional step
+        if: github.event_name == 'push'
+        run: echo "This was triggered by a push event"
